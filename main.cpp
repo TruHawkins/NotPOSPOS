@@ -17,8 +17,11 @@ int main()
            <<"NotPOSPOS  Version 0.1\n"
            <<"======================\n";
   order current;
+  //std::cout<<"poo"<<std::endl;
   keypadController keypad(&current);
+  current.addObserver(&keypad);
   registerController ticket(&inventory,&current);
+  current.addObserver(&ticket);
   ticket.processOrder();
 
   return 0;

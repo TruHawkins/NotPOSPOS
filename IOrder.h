@@ -2,9 +2,12 @@
 #define IORDER_H
 #include <string>
 #include <vector>
+#include <set>
 #include "item.h"
 
-class IOrder
+#include "ObserverPattern.cpp"
+
+class IOrder : public Observable
 {
 public:
   //adds an item to the order
@@ -24,6 +27,7 @@ public:
 
   //returns balance, given an amount paid
   virtual double balance(double) = 0;
+  
 };
 
 #endif //end interface definition
